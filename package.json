@@ -5,6 +5,8 @@
   "type": "module",
   "scripts": {
     "test": "vitest run",
+    "test:live": "vitest run --config vitest.live.config.ts",
+    "accuracy": "tsx scripts/accuracy.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

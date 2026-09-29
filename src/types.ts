@@ -16,6 +16,11 @@ export const CATEGORIES = [
 
 export type Category = (typeof CATEGORIES)[number];
 
+export const isCategory = (value: string): value is Category =>
+  (CATEGORIES as readonly string[]).includes(value);
+
 export interface ClassifiedTxn extends Txn {
   category: Category;
+  /** Null when Claude's answer was used, else why the category fell back to "other". */
+  fallbackReason: string | null;
 }
